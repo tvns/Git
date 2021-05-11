@@ -1,0 +1,241 @@
+Git Bash:
+************
+
+git --version
+
+git --help
+
+git help init (any command name)
+
+************
+
+git config --global user.name "Name"
+
+git config --global user.email "mail id"
+
+git config --global user.editor "'C:/Program Files (x86)/sublime text 3/subl.exe' -w"
+
+
+ref link: https://docs.github.com/en/github/getting-started-with-github/associating-text-editors-with-git
+
+
+******
+
+subl app.py
+
+
+to change the editor: git config --global user.editor "Notepad"
+
+Notepad app.txt
+
+
+
+************
+
+git config --list
+
+************
+
+
+1) pwd ...... print working directory
+
+2) cd "directory_path"
+
+3) mkdir <directory name>
+
+4) cd <directory name>
+
+
+************
+
+Now we want to tell git to track this directory:
+
+* git init ......... this will initiate empty git repository
+
+
+to see the files:  ls
+
+* ls -A
+
+* cd .git
+
+* ls -A ........ now this will show what r the files git has placed in this directory
+
+* cd ..
+
+**************
+
+
+to remove files:
+
+* rm app.txt
+
+
+**************
+
+1) git status
+
+inorder to track the file: 
+
+2) git add app.txt ........................ to be set for saving (STAGED COPY)
+
+
+3) git commit -m "Create shopping list" ................ m is for the message
+
+**************
+
+COMMIT IS LIKE SAVING THE CHANGES OF UR REPOSITORY
+
+**************
+
+git log ............ whatever we did so far and there will be a unique id shown for the commit
+
+
+************** 
+
+git diff ........ shows the differences between versions
+
+
+
+**************
+
+STAGED COPY: READY TO BE SAVED
+
+WORKING COPY: NOT YET READY TO BE SAVED
+
+**************
+
+when we have a long list of commits and we want to see the recent ones:
+
+git log -1
+
+**************
+
+git diff --staged
+
+**************
+
+
+HEAD is the stack of all the commits we made i.e., the most recent committed 
+
+-1 ......... HEAD 
+
+-2 ......... HEAD - 1 .......... the previous committed version before the HEAD
+
+
+**************
+
+to go back to the file of previous versions:
+
+git checkout HEAD~1 list.txt
+
+
+git checkout HEAD~2 list.txt
+
+
+git checkout HEAD list.txt
+
+
+notepad grocery.txt
+
+**************
+
+
+RESETTING THE FILE WHICH IS IN STAGING STATE I.E.,  BEFORE COMMITTING:
+
+
+1) git reset list.txt
+
+
+**************
+
+RESETTING THE FILE WHICH IS COMMITTED:
+
+
+1) git reset HEAD~1 --soft ..............(Make HEAD - 1 commit as the latest one)
+
+
+		this will only remove the commit HEAD but the staged part is unchanged
+
+
+2) git reset HEAD~1 --mixed 
+
+		this will remove the commit HEAD nad makes the previous changes unstaged but still the file is unchanged
+
+
+3) git reset HEAD~1 --hard
+
+		this will remove the commit HEAD i.e., the previous commit will be HEAD now and the previous changes wil be removed
+
+		i.e., the actual file HEAD not HEAD~1 is removed
+
+**************
+
+
+git branch dairy
+
+git branch
+
+git branch vegetables
+
+git branch
+
+git checkout dairy
+
+notepad list.txt
+
+git add list.txt
+
+git commit -m "updated dairy"
+
+git checkout master
+
+notepad list.txt
+
+****
+
+git checkout master
+
+git merge dairy
+
+git merge vegetables
+
+notepad list.txt
+
+************
+
+
+git remote add origin <github repository url>
+
+git remote -v
+
+git push origin master
+
+
+*************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
